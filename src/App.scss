@@ -1,0 +1,10 @@
+div.App{
+  max-width: 900px;
+  margin: auto;
+
+  > main{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+}
