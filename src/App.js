@@ -1,21 +1,30 @@
 import React, { Component } from 'react';
 import MainArea from './components/MainArea';
-import SideArea from './components/SideBar';
+import SideBar from './components/SideBar';
 import './App.scss';
 
 class App extends Component {
-  state = {
-    text: null,
+  constructor(props){
+    super(props);
+    this.state = {
+      text: '',
+    }; 
+    this.handleTextChange = this.handleTextChange.bind(this);
+  }
+
+  handleTextChange(event) {
+    this.setState({text: event.target.value});
   }
 
   render() {
     return (
       <div className="App">
         <h1>Word Counter</h1>
-        <main>
-          <MainArea text={this.state.text} />
-          <SideArea text={this.state.text} />
-        </main>
+        <div className="container">
+          <MainArea text={this.state.text} 
+            handleTextChange={this.handleTextChange} />
+          <SideBar text={this.state.text} />
+        </div>
       </div>
     );
   }

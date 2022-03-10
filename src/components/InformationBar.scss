@@ -1,0 +1,21 @@
+div.InformationBar{
+  display: flex;
+  justify-content: space-evenly;
+    
+  >div{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    .info-title{
+      text-transform: uppercase;
+      margin-bottom: 0px;
+    }
+
+    .info-number{
+      font-size: 1.2rem;
+      margin-top: 0px;
+    }
+  }
+}
