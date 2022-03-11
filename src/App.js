@@ -8,12 +8,18 @@ class App extends Component {
     super(props);
     this.state = {
       text: '',
+      words: []
     }; 
     this.handleTextChange = this.handleTextChange.bind(this);
   }
 
   handleTextChange(event) {
-    this.setState({text: event.target.value});
+    const newText = event.target.value
+    const newWords = newText.match(/[0-9a-zA-Z]+/g) || []
+    this.setState({
+      text: newText, 
+      words: newWords,
+    });
   }
 
   render() {
@@ -21,9 +27,11 @@ class App extends Component {
       <div className="App">
         <h1>Word Counter</h1>
         <div className="container">
-          <MainArea text={this.state.text} 
+          <MainArea 
+            text={this.state.text}
+            words={this.state.words} 
             handleTextChange={this.handleTextChange} />
-          <SideBar text={this.state.text} />
+          <SideBar words={this.state.words}  />
         </div>
       </div>
     );

@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import './InformationBar.scss';
 
 class InformationBar extends Component {
-  render() {
-    const text = this.props.text 
-    const charCount = text.length
-    const wordCount = text.match(/[0-9a-zA-Z]+/g)?.length || 0
+  render() {  
+    const charCount = this.props.text.length
+    const wordCount = this.props.words?.length
 
     return (
       <div className='InformationBar'>
