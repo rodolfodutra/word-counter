@@ -15,7 +15,7 @@ class App extends Component {
 
   handleTextChange(event) {
     const newText = event.target.value
-    const newWords = newText.match(/[0-9a-zA-Z]+/g) || []
+    const newWords = newText.match(/[a-zA-Z_-]+/g) || []
     this.setState({
       text: newText, 
       words: newWords,
