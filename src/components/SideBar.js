@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class SideArea extends Component {
+class SideBar extends Component {
   /**
    * Creates a sorted array of word objects.
    * Each word object includes number of
@@ -42,4 +42,4 @@ class SideArea extends Component {
   }
 }
 
-export default SideArea;
+export default SideBar;
