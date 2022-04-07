@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import InformationBar from "./InformationBar";
 import "./MainArea.scss";
 
-class MainArea extends Component {
+type MainAreaProps = {
+  text: string, 
+  words: string[],
+  handleTextChange: React.ChangeEventHandler<HTMLTextAreaElement>;
+}
+
+class MainArea extends Component<MainAreaProps> {
   render() {
     return (
       <div className="MainArea">

@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
-class SideBar extends Component {
+type SideBarProps = {
+  words: string[]
+}
+
+class SideBar extends Component<SideBarProps> {
   /**
    * Creates a sorted array of word objects.
    * Each word object includes number of
@@ -10,10 +14,10 @@ class SideBar extends Component {
    * @returns {Array}
    */
   createWordList() {
-    let wordList = [];
+    let wordList: { word: string, count: number}[] = [];
 
     this.props.words.forEach((word) => {
-      const wordObj = wordList.find(
+      const wordObj: { word: string, count: number} | undefined = wordList.find(
         (wordObj) => wordObj.word === word.toLowerCase()
       );
       if (wordObj) wordObj.count++;

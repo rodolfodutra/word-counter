@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import './InformationBar.scss';
 
-class InformationBar extends Component {
+type InformationBarProps = {
+  text: string, 
+  words: string[]
+}
+
+class InformationBar extends Component<InformationBarProps> {
   render() {  
     const charCount = this.props.text.length
     const wordCount = this.props.words?.length
