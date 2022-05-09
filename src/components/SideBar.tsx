@@ -4,6 +4,11 @@ type SideBarProps = {
   words: string[]
 }
 
+type WordValue = {
+  word: string;
+  count: number
+}
+
 class SideBar extends Component<SideBarProps> {
   /**
    * Creates a sorted array of word objects.
@@ -14,10 +19,10 @@ class SideBar extends Component<SideBarProps> {
    * @returns {Array}
    */
   createWordList() {
-    let wordList: { word: string, count: number}[] = [];
+    let wordList: WordValue[] = [];
 
     this.props.words.forEach((word) => {
-      const wordObj: { word: string, count: number} | undefined = wordList.find(
+      const wordObj: WordValue | undefined = wordList.find(
         (wordObj) => wordObj.word === word.toLowerCase()
       );
       if (wordObj) wordObj.count++;
